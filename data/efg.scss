@@ -1,0 +1,53 @@
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
+.tt_nav {
+	background-color: #ebebeb;
+}
+
+.timetableblock {
+	background-color: gtkcolor(theme_base_color);
+	&.cancelled label {
+		text-decoration: line-through;
+		color: red;
+	}
+	&.event label {
+		color: green;
+	}
+}
+
+.unfolded .daycol.active {
+	background-color: rgba(0,0,0,0.025);
+}
+
+button {
+	&.success-action {
+		background-color: gtkshade(gtkcolor(success_color), 0.95);
+	}
+	&.fail-action {
+		background-color: gtkcolor(error_color);
+	}
+}
+
+.gdark {
+	.tt_nav {
+		background-color: #303030;
+	}
+	.unfolded .daycol.active {
+		background-color: rgba(255,255,255,0.025);
+	}
+}

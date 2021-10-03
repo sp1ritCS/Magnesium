@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<requires lib="gtk" version="4.0"/>
+	<requires lib="libadwaita" version="1.0"/>
+	<menu id="efg_appmenu">
+		<section>
+			<item>
+				<attribute name="label" translatable="yes">_Preferences</attribute>
+				<attribute name="action">app.prefs</attribute>
+			</item>
+		</section>
+		<section>
+			<item>
+				<attribute name="label" translatable="yes">_About Magnesium</attribute>
+				<attribute name="action">app.about</attribute>
+			</item>
+		</section>
+	</menu>
+  <template class="EfgWindow" parent="AdwApplicationWindow">
+    <property name="content">
+      <object class="GtkBox" id="container">
+        <property name="orientation">vertical</property>
+				<child>
+					<object class="AdwHeaderBar">
+						<property name="centering-policy">strict</property>
+						<child type="start">
+							<object class="GtkMenuButton">
+								<property name="icon-name">open-menu-symbolic</property>
+								<property name="menu-model">efg_appmenu</property>
+								<property name="primary">true</property>
+							</object>
+						</child>
+						<child type="title">
+							<object class="AdwViewSwitcherTitle" id="title">
+								<property name="stack">stack</property>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwViewStack" id="stack">
+						<property name="vexpand">true</property>
+						<child>
+							<object class="AdwViewStackPage">
+								<property name="name">agenda</property>
+								<property name="title">Agenda</property>
+								<property name="icon-name">clock-symbolic</property>
+								<property name="child">
+									<object class="GtkBox">
+										<property name="margin-top">24</property>
+										<property name="margin-start">32</property>
+										<property name="margin-end">32</property>
+										<property name="margin-bottom">24</property>
+										<property name="orientation">vertical</property>
+										<child>
+											<object class="GtkLabel" id="greeting">
+												<property name="halign">start</property>
+												<property name="label">Hello,</property>
+												<attributes>
+													<attribute name="scale" value="2"/>
+												</attributes>
+											</object>
+										</child>
+									</object>
+								</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwViewStackPage">
+								<property name="name">time</property>
+								<property name="title">Timetable</property>
+								<property name="icon-name">calendar-symbolic</property>
+								<property name="child">
+									<object class="EfgTimetable" id="timetable" />
+								</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwViewStackPage">
+								<property name="name">food</property>
+								<property name="title">Food</property>
+								<property name="icon-name">pizza-symbolic</property>
+								<property name="child">
+									<object class="AdwStatusPage">
+										<property name="icon-name">dialog-warning-symbolic</property>
+										<property name="title">Food</property>
+										<property name="description">Not implemented yet</property>
+									</object>
+								</property>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwViewSwitcherBar">
+						<property name="stack">stack</property>
+						<binding name="reveal">
+							<lookup name="title-visible">title</lookup>
+						</binding>
+					</object>
+				</child>
+      </object>
+    </property>
+  </template>
+</interface>

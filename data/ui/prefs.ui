@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<requires lib="gtk" version="4.0"/>
+	<requires lib="libadwaita" version="1.0"/>
+  <template class="EfgPreferences" parent="AdwPreferencesWindow">
+		<child>
+			<object class="AdwPreferencesPage">
+				<property name="icon_name">settings-symbolic</property>
+				<property name="title" translatable="yes">General</property>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">Behavior</property>
+						<child>
+							<object class="AdwActionRow">
+								<property name="title" translatable="yes">Show weekends</property>
+								<child type="suffix">
+									<object class="GtkBox">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<child>
+											<object class="GtkToggleButton" id="bhvr_weekends_no">
+												<property name="label" translatable="yes">No</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkToggleButton" id="bhvr_weekends_sat">
+												<property name="label" translatable="yes">only Sat</property>
+												<property name="group">bhvr_weekends_no</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkToggleButton" id="bhvr_weekends_yes">
+												<property name="label" translatable="yes">Yes</property>
+												<property name="group">bhvr_weekends_no</property>
+											</object>
+										</child>
+										<style>
+											<class name="linked"/>
+										</style>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child>
+							<object class="AdwActionRow" id="bhvr_wkstart">
+								<property name="title" translatable="yes">Start of the week</property>
+								<child type="suffix">
+									<object class="GtkBox">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<child>
+											<object class="GtkToggleButton" id="bhvr_wkstart_mon">
+												<property name="label" translatable="yes">Mon</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkToggleButton" id="bhvr_wkstart_sun">
+												<property name="label" translatable="yes">Sun</property>
+												<property name="group">bhvr_wkstart_mon</property>
+											</object>
+										</child>
+										<style>
+											<class name="linked"/>
+										</style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">Appearance</property>
+						<child>
+							<object class="AdwActionRow">
+								<property name="title" translatable="yes">Timetable Block size</property>
+								<property name="subtitle" translatable="yes">the maximum size before a block starts becommimg scrollable</property>
+								<property name="activatable_widget">tt_blocksize</property>
+								<child type="suffix">
+									<object class="GtkSpinButton" id="tt_blocksize">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<property name="adjustment">
+											<object class="GtkAdjustment">
+												<property name="upper">1024</property>
+												<property name="step-increment">1</property>
+												<property name="page-increment">32</property>
+											</object>
+										</property>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="AdwPreferencesPage" id="online_accounts">
+				<property name="icon_name">user-symbolic</property>
+				<property name="title" translatable="yes">Online Accounts</property>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">Microsoft O365</property>
+						<property name="description" translatable="yes">used to authenticate you against schulmanager-online.de</property>
+						<child>
+							<object class="AdwActionRow">
+								<property name="title" translatable="yes">E-Mail Address</property>
+								<property name="subtitle" translatable="yes">Provided to you by "IT"</property>
+								<property name="activatable_widget">o365_user</property>
+								<child type="suffix">
+									<object class="GtkEntry" id="o365_user">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<property name="width_chars">24</property>
+										<property name="input_purpose">email</property>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child>
+							<object class="AdwActionRow">
+								<property name="title" translatable="yes">Password</property>
+								<property name="activatable_widget">o365_pass</property>
+								<child type="suffix">
+									<object class="GtkPasswordEntry" id="o365_pass">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<property name="width_chars">24</property>
+										<property name="show_peek_icon">true</property>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child>
+							<object class="AdwActionRow">
+								<property name="title">​</property>
+								<child type="prefix">
+									<object class="GtkButton" id="o365_delete">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<property name="sensitive">false</property>
+										<property name="icon-name">user-minus</property>
+										<property name="tooltip-text" translatable="yes">Remove saved login data</property>
+										<style>
+											<class name="flat"/>
+											<class name="destructive-action"/>
+										</style>
+									</object>
+								</child>
+								<child type="suffix">
+									<object class="GtkButton" id="o365_btn">
+										<property name="halign">center</property>
+										<property name="valign">center</property>
+										<property name="label" translatable="yes">Check</property>
+										<property name="tooltip-text" translatable="yes">Validate and save login data</property>
+										<style>
+											<class name="suggested-action"/>
+										</style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+  </template>
+</interface>

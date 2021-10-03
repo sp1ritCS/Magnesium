@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/dev/sp1rit/efg/Desktop">
+    <file>efg.svg</file>
+    <file alias="style.css">efg.css</file>
+    <!-- BEGIN UI -->
+		<file>ui/block.ui</file>
+		<file>ui/prefs.ui</file>
+		<file>ui/timetable.ui</file>
+    <file>ui/window.ui</file>
+  </gresource>
+  <gresource prefix="/dev/sp1rit/efg/Desktop/icons/16x16/actions/">
+    <!-- Overrides
+    <file preprocess="xml-stripblanks" alias="open-menu-symbolic.svg">icons/dots-vertical.svg</file>
+    <file preprocess="xml-stripblanks" alias="edit-find-symbolic.svg">icons/search.svg</file> -->
+    <!-- Pages -->
+    <file preprocess="xml-stripblanks" alias="clock-symbolic.svg">icons/clock.svg</file>
+    <file preprocess="xml-stripblanks" alias="calendar-symbolic.svg">icons/calendar.svg</file>
+    <file preprocess="xml-stripblanks" alias="pizza-symbolic.svg">icons/pizza.svg</file>
+    <!-- Setting pages -->
+    <file preprocess="xml-stripblanks" alias="settings-symbolic.svg">icons/settings.svg</file>
+    <file preprocess="xml-stripblanks" alias="user-symbolic.svg">icons/user.svg</file>
+    <!-- Setting page: Online Accounts -->
+    <file preprocess="xml-stripblanks" alias="user-minus-symbolic.svg">icons/user-minus.svg</file>
+  </gresource>
+</gresources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="dev.sp1rit.efg.Desktop">
+	<enum id="dev.sp1rit.efg.Desktop.preferences.behavior.ShowWeekends">
+		<value nick="No" value="0"/>
+		<value nick="Sat" value="1"/>
+		<value nick="Yes" value="2"/>
+	</enum>
+	<enum id="dev.sp1rit.efg.Desktop.preferences.behavior.WeekStart">
+		<value nick="Mon" value="0"/>
+		<value nick="Sun" value="1"/>
+	</enum>
+	<schema id="dev.sp1rit.efg.Desktop" path="/dev/sp1rit/Magnesium/">
+		<key name="bhvr-weekends"  enum="dev.sp1rit.efg.Desktop.preferences.behavior.ShowWeekends">
+			<default>"No"</default>
+			<summary>Show weekends</summary>
+			<description>This can take the value of No (don't show weekends), Sat (only show saturdays) or Yes (show weekends)</description>
+		</key>
+		<key name="bhvr-weekstart" enum="dev.sp1rit.efg.Desktop.preferences.behavior.WeekStart">
+			<default>"Mon"</default>
+			<summary>Start of week</summary>
+			<description>This can take the value of Mon (week starts on Monday) or Sun (week starts on Sunday); only has an effect is bhvr-weekends is set to yes</description>
+		</key>
+		<key name="tt-blocksize" type="i">
+			<range min="0" max="1024"/>
+			<default>256</default>
+			<summary>Timetable Blocksize</summary>
+			<description>The maximum size before a block starts showing a scroll-bar</description>
+		</key>
+		<key name="ms-username" type="s">
+			<default>""</default>
+			<summary>Office 365 E-Mail</summary>
+			<description>You should have received this from your "IT" department.</description>
+		</key>
+	</schema>
+</schemalist>
