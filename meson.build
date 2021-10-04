@@ -8,7 +8,7 @@ dependency('gtk4', version: '>= 4.0.0')
 dependency('libadwaita-1')
 
 app_id = 'dev.sp1rit.efg.Desktop'
-app_bin = 'efg'
+app_bin = 'magnesium'
 efg_prefix = get_option('prefix')
 efg_bindir = join_paths(efg_prefix, get_option('bindir'))
 efg_localedir = join_paths(efg_prefix, get_option('localedir'))

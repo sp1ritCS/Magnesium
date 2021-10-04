@@ -181,7 +181,7 @@ impl EfgTimetable {
 
 									let (hours, timetable) = futures::join!(hours, timetable);
 
-									let smart = timetable.unwrap().to_smart_v2_daymap().unwrap();
+                                    let smart = timetable.expect("failed getting timetable").to_smart_v2_daymap().expect("failed parsing timetable");
 
 									let newc = blocks::get_week(&settings, &hours.unwrap(), &smart[0], cal.date(), &cal);
 									newc.connect_child_transition_running_notify(move |_| {
