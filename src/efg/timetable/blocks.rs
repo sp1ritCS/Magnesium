@@ -129,7 +129,7 @@ impl EfgTimetableBlock {
 
 pub fn get_blocks(
 	settings: &gio::Settings,
-	hours: &sm::HoursMap,
+	hours: &sm::SchoolHoursMap,
 	elements: &BTreeMap<usize, Vec<smart::TimetableElement>>,
 	day: (usize, &str),
 	active: bool,

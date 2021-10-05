@@ -25,6 +25,7 @@ gtkresources = gnome.compile_resources('efg', 'efg.gresource.xml',
 
 desktop_conf = configuration_data()
 desktop_conf.set('icon', app_id)
+desktop_conf.set('exec', app_bin)
 configure_file(
     input: '@0@.desktop.in'.format(app_id),
     output: '@0@.desktop'.format(app_id),

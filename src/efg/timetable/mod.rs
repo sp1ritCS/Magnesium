@@ -183,7 +183,7 @@ impl EfgTimetable {
 
                                     let smart = timetable.expect("failed getting timetable").to_smart_v2_daymap().expect("failed parsing timetable");
 
-									let newc = blocks::get_week(&settings, &hours.unwrap(), &smart[0], cal.date(), &cal);
+									let newc = blocks::get_week(&settings, &hours.unwrap(), &smart, cal.date(), &cal);
 									newc.connect_child_transition_running_notify(move |_| {
 										// set "view" scrollbar back to top
 										view.vadjustment().map(|adj| adj.set_value(0.0));
